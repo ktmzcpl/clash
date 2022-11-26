@@ -10,6 +10,7 @@ PLATFORM_LIST = \
 	darwin-amd64 \
 	darwin-amd64-v3 \
 	darwin-arm64 \
+	android-arm64 \
 	linux-386 \
 	linux-amd64 \
 	linux-amd64-v3 \
@@ -45,6 +46,9 @@ darwin-amd64-v3:
 
 darwin-arm64:
 	GOARCH=arm64 GOOS=darwin $(GOBUILD) -o $(BINDIR)/$(NAME)-$@
+
+android-arm64:
+	GOARCH=arm64 GOOS=android $(GOBUILD) -o $(BINDIR)/$(NAME)-$@
 
 linux-386:
 	GOARCH=386 GOOS=linux $(GOBUILD) -o $(BINDIR)/$(NAME)-$@
